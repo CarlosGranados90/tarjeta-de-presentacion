@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+    transition: all 0.5s linear;
+}
+
+section {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: #36343450;
+}
+
+
+.bussines-card {
+    width: 640px;
+    height: 360px;
+    position: relative;
+}
+
+.bussines-card .front {
+    background-image: linear-gradient(#170a61, #000000);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: column;
+    position: relative;
+}
+
+.bussines-card .front .empresa {
+    font-family: "Rubik Maze", system-ui;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 623%;
+    text-align: center;
+    padding: 0 0 0 30px;
+    color: rgb(243, 238, 238);
+}
+
+.qr {
+    margin-right: 5px;
+    width: 130px;
+    height: 130px;
+}
+
+.bussines-card:hover .front {
+    transform: perspective(700px) rotateX(180deg);
+}
+
+.bussines-card .front, .bussines-card .back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.bussines-card .front::before {
+    content: "";
+    border-radius: 100%;
+    border: 8px solid #d4d4d434;
+    position: absolute;
+    top: -40%;
+    height: 160%;
+    width: 300px;
+    transform: rotateZ(105deg);
+    transform: rotateX(105deg);
+}
+
+
+.bussines-card .back {
+    background-image: linear-gradient(#1e1069, #2b2929);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: perspective(700px) rotateX(-180deg);
+}
+
+.bussines-card:hover .back {
+    transform: perspective(700px) rotateX(0deg);
+}
+
+.bussines-card .back .image,
+.bussines-card .back .info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.bussines-card .back .image {
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    color: #242424;
+    align-items: center;
+}
+
+.bussines-card .back .image img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border: 2px solid #b3b0b0;
+    border-radius: 15%;
+    padding: 4px;
+}
+
+.bussines-card .back .image h1 {
+    padding-top: 10px;
+    font-size: 21px;
+    font-weight: 600;
+    margin-block: 8px;
+    color: #ebebeb;
+}
+
+.bussines-card .back .image h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ebebeb;
+}
+
+.bussines-card .back .info{
+    align-items: flex-start;
+    color: #ebebeb;
+}
+
+.bussines-card .back .info .contacto {
+    display: flex;
+    width: 12%;
+    height: 12%;
+    line-height: 32px;
+    margin-block: 8px;
+    font-size: 18px;
+    margin-right: 16px;
+}
+
+p {
+    margin: 0 10px;
+    padding: 0 10px;
+    text-align:end;
+}
